@@ -11,19 +11,10 @@ arithmetic operators
 type conversions / type casting
 increment/decrement
 bitwise operators
-
-
-arrays
-pointers
-	strings
-	equivalence of arrays and pointers
-	pointer arithmetic on arrays
-	ARRAYSIZE macro
-	argc, and argv[] parameters to main()
+relational and logical operators
 
 control flow
 	if/if else
-	relational and logical operators
 	conditional expressions (false = 0, true = non-zero)
 	ternary operator
 	switch
@@ -34,6 +25,14 @@ control flow
 	continue
 	goto
 	return
+
+arrays
+pointers
+	strings
+	equivalence of arrays and pointers
+	pointer arithmetic on arrays
+	ARRAYSIZE macro
+	argc, and argv[] parameters to main()
 
 functions
 parameters
