@@ -1,2 +1,8 @@
+CFLAGS=-W -Wall
 
-all:
+PRODUCTS=0001-hello
+
+all:	${PRODUCTS}
+
+clean:
+	rm -f ${PRODUCTS}	
