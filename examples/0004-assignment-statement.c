@@ -20,7 +20,7 @@ int main()
 	/* Same as: a = a + 1; */
 	a += 1;
 
-	/* Same as: b = b - 5; */`
+	/* Same as: b = b - 5; */
 	b -= 5;
 
 	/* Almost same as c = c + 1;  */
