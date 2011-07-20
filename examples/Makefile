@@ -8,7 +8,8 @@ PRODUCTS=0001-hello 0002-integer-variables \
 	0007-for-loop \
 	0008-if-statement \
 	0009-while-loop \
-	0010-do-while
+	0010-do-while \
+	0011-functions
 
 all:	${PRODUCTS}
 
