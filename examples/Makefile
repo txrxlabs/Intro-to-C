@@ -11,7 +11,8 @@ PRODUCTS=0001-hello 0002-integer-variables \
 	0010-do-while \
 	0011-functions \
 	0012-functions \
-	0013-pseudo-random-numbers
+	0013-pseudo-random-numbers \
+	0014-pointers
 
 all:	${PRODUCTS}
 
