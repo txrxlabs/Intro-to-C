@@ -37,6 +37,16 @@ int main()
 
 	printf("a = %d, b= %d, c = %d\n", a, b, c);
 
+	/* Arithmetic operators
+	 * a + b   Addition
+	 * a - b   Subtraction
+	 * a / b   Division (with integer types, truncates
+	 * a * b   Multiplication
+	 * a % b   Modulo (remainder after division)
+	 * -a      Unary minus
+	 * +a      Unary plus
+	 */
+
 	return 0;
 }
 
