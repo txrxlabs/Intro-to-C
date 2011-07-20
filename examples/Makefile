@@ -12,7 +12,8 @@ PRODUCTS=0001-hello 0002-integer-variables \
 	0011-functions \
 	0012-functions \
 	0013-pseudo-random-numbers \
-	0014-pointers
+	0014-pointers \
+	0015-strings
 
 all:	${PRODUCTS}
 
