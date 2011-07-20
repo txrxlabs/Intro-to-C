@@ -19,7 +19,8 @@ PRODUCTS=0001-hello 0002-integer-variables \
 	0018-more-pointer-arithmetic \
 	0019-structs \
 	0020-more-structs \
-	0021-input-output
+	0021-input-output \
+	0022-more-input-output
 
 all:	${PRODUCTS}
 
