@@ -17,7 +17,8 @@ PRODUCTS=0001-hello 0002-integer-variables \
 	0016-strings2 \
 	0017-arrays-pointer-arithmetic \
 	0018-more-pointer-arithmetic \
-	0019-structs
+	0019-structs \
+	0020-more-structs
 
 all:	${PRODUCTS}
 
