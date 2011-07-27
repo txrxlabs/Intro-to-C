@@ -4,7 +4,7 @@ int main(int argc, char *argv[])
 {
 	int a[] = { 10, 20, 30, 40, 50, 60, 70, 80, 90, -1 };
 
-	int *i, j;
+	int *i, j, k;
 
 	/* Notice how i++ adds not 1, but sizeof(int) to i
 	 * each time though the loop. 
@@ -25,6 +25,13 @@ int main(int argc, char *argv[])
 	 */
 	printf("7[a] == %d, &7[a] = %p\n", 7[a], &7[a]);
 	/* But don't do that, cause that's just crazy. */
+
+	/* or you can do something like this */
+	for (k = 0; k < 10; k++) {
+		for (j = 0; j < 50; j++)
+			printf("%c", " .:;!+%&$#"[k]);
+		printf("\n");
+	}
 
 	return 0;
 }
