@@ -21,7 +21,8 @@ PRODUCTS=0001-hello 0002-integer-variables \
 	0020-more-structs \
 	0021-input-output \
 	0022-more-input-output \
-	0023-input-output-3
+	0023-input-output-3 \
+	0024-strings3
 
 all:	${PRODUCTS}
 
