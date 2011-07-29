@@ -1,0 +1,79 @@
+commit 8364c0d10c7fcb9fd445949759e2150611fa7024
+Author: Stephen M. Cameron <scameron@beardog.cce.hp.com>
+Date:   Thu Jul 28 12:31:32 2011 -0500
+
+    Perspective projection: 
+
+	Consider a putting green with a flag in the hole.
+	Write a perspective projection function which
+	accepts parameters for x, y, z and z1, and fills in
+	the values of parameters for x1, and y1.
+    
+                               .|>- <------ flag 
+                      |     .   | |
+                      |  .      | |
+                      +---      | |y
+             /     .  | |       | |
+            /\  .     | | y1    | |
+           < *--------|---------|-------------------
+            \/|<--z1->|<---z--->|
+             \        |         o <---- hole 
+                      |
+            Eye       |
+    
+                    screen
+    
+    y is the y (height) coordinate of the object
+    z is the z (depth) coordinate of the object.
+    z1 is the distance from eye to screen (screen is at z = 0).
+    
+    y1 is y screen coordinate of the object.
+    
+    We need to find y1
+    
+    From similar triangles:
+    
+    y1/z1 == y/(z1 + z)
+    
+    (multiply both sides by z1)
+    
+    y1 = z1 * (y / (z1 + z));
+    
+    The calculation for the x screen coordinate is exactly the same,
+    just substitute x for y (this imagining the above drawing as
+    being viewed from above, rather than from the side).
+    
+    x1 = z1 * (x / (z1 + z));
+    
+    This is the perspective projection which given 3 dimensional
+    coordinates (x, y, z) and an eye distance, z1, yield screen
+    coordinates (x1, y1).
+    
+    Write a perspective projection function which
+    accepts parameters for x, y, z and z1, and fills in
+    the values of parameters for x1, and y1.
+
+    Don't bother worrying about the case when the denominators
+    could be zero.
+
+Combine your function with this main, below, replacing the
+call to yourfunction with your perspective projection function.
+
+int main()
+{
+	float x, y, z, x1, y1, z1;
+
+	x = 20.0;
+	y = 20.0;
+	z = 50.0;
+	z1 = 25.0;
+
+	yourfunction(whatever parameters); /* <--- fix this part */
+
+	printf("screen coords for (%f,%f,%f) are (%f,%f)\n", x, y, z, x1, y1);
+	return 0;
+}
+
+The correct output should be:
+screen coords for (20.000000,20.000000,50.000000) are (6.666667,6.666667)
+
