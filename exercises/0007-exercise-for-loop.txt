@@ -1,0 +1,30 @@
+Write a program that prompts the user for a number
+and then prints out a triangle of asterisks ('*')
+such that the width and height of the triangle are
+equal to the number which the user typed in.
+
+For example, if the user types in 3, then the output
+should be:
+
+*
+**
+***
+
+and if the user types in 7, then the output should be:
+
+*
+**
+***
+****
+*****
+******
+*******
+
+Hints:  
+1. Use for loops.
+2. Here's how to read in an integer from the user:
+
+	int value;
+
+	scanf("%d", &value);
+
