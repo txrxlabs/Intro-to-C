@@ -3,27 +3,27 @@
 #include <ctype.h> /* for tolower */
 #include <stdlib.h>
 
-struct dictionary {
+struct dictionary_entry {
 	char *native;
 	char *translation;
 };
 
-struct dictionary english2spanish[] = {
+struct dictionary_entry english2spanish[] = {
 	{ "one", "uno" },
 	{ "two", "dos" },
 	{ "three", "tres" },
 	{ NULL, NULL },
 };
 	
-struct dictionary english2french[] = {
+struct dictionary_entry english2french[] = {
 	{ "one", "un" },
 	{ "two", "deux" },
 	{ "three", "trois" },
 	{ NULL, NULL },
 };
 
-struct dictionary_list {
-	struct dictionary *dictionary;
+struct dictionary {
+	struct dictionary_entry *dictionary;
 	char *language;
 } dlist[] = {
 	{ english2spanish, "spanish", },
@@ -53,7 +53,7 @@ void getcommand(char *command, int bufsize)
 	lowercase(command);
 }
 
-struct dictionary *lookup(struct dictionary *dictionary, char *word)
+struct dictionary_entry *lookup(struct dictionary_entry *dictionary, char *word)
 {
 	int i;
 
@@ -65,9 +65,9 @@ struct dictionary *lookup(struct dictionary *dictionary, char *word)
 
 void process(char *command)
 {
-	static struct dictionary *current_dictionary = english2spanish;
+	static struct dictionary_entry *current_dictionary = english2spanish;
 	char *nextword;
-	struct dictionary *translation;
+	struct dictionary_entry *translation;
 	int i;
 
 	printf("processing '%s'\n", command);
