@@ -22,29 +22,29 @@ void insert(struct list_entry **list, struct list_entry *e)
 	*list = e;
 }
 
-/* Create a type called "print_entry" which is a pointer to a function
+/* Create a type called "list_action" which is a pointer to a function
  * returning void which accepts a pointer to a struct list_entry as a
  * parameter
  */
-typedef void (*print_entry)(struct list_entry *e);
+typedef void (*list_action)(struct list_entry *e);
 
-void print_list(struct list_entry *list, print_entry printfunction)
+void for_each_entry(struct list_entry *list, list_action action)
 {
 	struct list_entry *i;
 
 	for (i = list; i; i = i->next)
-		printfunction(i);
+		action(i);
 }
 
-void reverse_print_list(struct list_entry *list, print_entry printfunction)
+void for_each_entry_backwards(struct list_entry *list, list_action action)
 {
 	if (list == NULL)
 		return;
-	reverse_print_list(list->next, printfunction);
-	printfunction(list);
+	for_each_entry_backwards(list->next, action);
+	action(list);
 }
 
-/* Create an instance of a print_entry function for strings */
+/* Create an instance of a list_action function for printing strings */
 void print_string_entry(struct list_entry *e)
 {
 	char *x;
@@ -53,7 +53,7 @@ void print_string_entry(struct list_entry *e)
 	printf("%s\n", x);
 }
 
-/* Create an instance of a print_entry function for ints */
+/* Create an instance of a list_action function for printing ints */
 void print_int_entry(struct list_entry *e)
 {
 	int *x;
@@ -78,17 +78,17 @@ int main(int argc, char *argv[])
 		insert(&list, &e[i]); 
 	}
 	printf("Here's the reversed list of program arguments.\n");
-	print_list(list, print_string_entry);
+	for_each_entry(list, print_string_entry);
 
 	for (i = 0; i < (int) ARRAYSIZE(numbers); i++) {
 		set_data(&e2[i], &numbers[i]);
 		insert(&list2, &e2[i]);
 	} 
 	printf("Here's the reversed list of numbers\n");
-	print_list(list2, print_int_entry);
+	for_each_entry(list2, print_int_entry);
 
 	printf("Here's the reversed list of numbers printed in reverse\n");
-	reverse_print_list(list2, print_int_entry);
+	for_each_entry_backwards(list2, print_int_entry);
 	return 0;
 }
 	
