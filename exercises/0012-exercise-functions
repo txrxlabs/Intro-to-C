@@ -1,0 +1,40 @@
+
+Complete the following program by writing the
+missing functions, and compile and run it.
+
+int main()
+{
+	int n;
+	int m;
+
+	do {
+		n = get_number_from_user("Enter a number: ");
+		m = get_number_from_user("Enter another number: ");
+		print_difference(n, m);
+		print_product(n, m);
+		print_rectangle(n, m);
+	} while (n >= 0 && m >= 0);
+	return 0;
+}
+
+The function get_number_from_user() should print out its
+parameter as a prompt, and then read in a number using scanf
+and return this number.
+
+The function print_difference should print the arithmetic difference
+of its parameters and return void.
+
+The function print_product should print the product of its parameters
+and return void.
+
+The function print rectangle should print a rectangle of asterisks
+using the first parameter as the number of rows and the 2nd parameter
+as the number of columns, so that for example, print_rectangle(3, 7)
+should print:
+
+*******
+*******
+*******
+
+It should return void.
+
