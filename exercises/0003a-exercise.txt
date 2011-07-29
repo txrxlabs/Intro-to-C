@@ -1,0 +1,10 @@
+Write a program which reads in a temperature value
+in degrees Fahrenheit, converts this value to degrees
+Celcius, and prints out the converted value.
+
+The formula to convert Fahrenheit to Celcius is:
+
+	(degrees Celcius) = ((degrees Fahrenheit) - 32) * 5 / 9;
+
+Beware of truncating integer division.
+
