@@ -1,6 +1,7 @@
 all:	0018-hexadecimal-conversion 0003a-exercise \
 	0007-exercise-for-loop \
-	0008-fizz-buzz
+	0008-fizz-buzz \
+	0012-exercise-functions
 
 0018-hexadecimal-conversion:	0018-hexadecimal-conversion.c
 	cc -W -Wall -o 0018-hexadecimal-conversion 0018-hexadecimal-conversion.c
@@ -13,3 +14,7 @@ all:	0018-hexadecimal-conversion 0003a-exercise \
 
 0008-fizz-buzz:	0008-fizz-buzz.c
 	cc -W -Wall -o 0008-fizz-buzz 0008-fizz-buzz.c
+
+0012-exercise-functions:	0012-exercise-functions.c
+	cc -W -Wall -o 0012-exercise-functions 0012-exercise-functions.c
+
