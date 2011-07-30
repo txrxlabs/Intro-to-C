@@ -10,11 +10,25 @@ Hints:
 
 1.  Here is a start:
 
-void print_hexnumber(int value)
-{
-	/* fill in the code that goes here. */
-}
+	#include <stdio.h>
 
+	void print_hexnumber(int value)
+	{
+		/* fill in the code that goes here. */
+	}
+
+	int main(int argc, char *argv[])
+	{
+		int number;
+
+		do {
+			printf("Enter a decimal integer (-1 to quit): ");
+			scanf("%d", &number);
+			printf("%d converted to hexadecimal is:\n", number);
+			print_hexnumber(number);
+		} while (number != -1);
+		return 0;
+	}
 
 2. Consider: hexadecimal digits have values between 0 and 15 decimal:
 	0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F
