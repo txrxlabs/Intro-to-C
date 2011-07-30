@@ -12,7 +12,7 @@ Hints:
 
 	#include <stdio.h>
 
-	void print_hexnumber(int value)
+	void print_hexnumber(unsigned int value)
 	{
 		/* fill in the code that goes here. */
 	}
@@ -25,7 +25,7 @@ Hints:
 			printf("Enter a decimal integer (-1 to quit): ");
 			scanf("%d", &number);
 			printf("%d converted to hexadecimal is:\n", number);
-			print_hexnumber(number);
+			print_hexnumber((unsigned int) number);
 		} while (number != -1);
 		return 0;
 	}
