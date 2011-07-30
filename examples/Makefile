@@ -8,6 +8,7 @@ PRODUCTS=0001-hello 0002-integer-variables \
 	0006-relational-operators \
 	0007-for-loop \
 	0008-if-statement \
+	0008a-switch-statement \
 	0009-while-loop \
 	0010-do-while \
 	0011-functions \
