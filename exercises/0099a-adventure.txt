@@ -1,0 +1,312 @@
+
+This exercise has 5 parts.  The goal will be to build a
+small adventure game, similar Zork, or the original 
+Collosal Cave adventure, but smaller.
+
+Sample output:
+
+You are standing in a field.  A path leads away into
+the woods to the north and south.  A small stream blocks
+travel to the west.  To the west is a barn.
+
+You see:
+a small rock hammer
+> Take hammer
+a small rock hammer: Taken.
+> Go north
+You are on a narrow path in a pine forest.  The 
+path continues to the north and south.
+> inventory
+You are carrying:
+a small rock hammer
+> 
+
+
+Part 1:
+
+Create a program which accepts a string from the user.
+Assume the first word of the string will be a verb -- a command.
+Look up the command in some kind of table of verbs which maps verbs 
+to numbers.
+
+Assume subsequent words after the first are objects.
+Create another function to look up each subsequent word
+in some sort of table of nouns.  Construct a list or array
+of numbers for each noun.
+
+
+If any word turns out to be unknown, print out an error message
+and get another string from the user and repeat the process.
+
+Pseudocode:
+
+	1. Get a string from the user
+	2. convert the first word into verb number, or if 
+	   the first word is unknown, print a message and goto 1.
+	3. convert the rest of the words to noun numbers, or if
+	   any word is unknown, print a message and goto 1.
+        4. print out the verb number and noun numbers.
+
+Hints,
+	create a function, say read_command() to print a prompt and 
+	get the string from the user.
+
+	create another function called parse_command which accepts
+	a string, and produces (via parameters) a verb number and
+	list of object numbers by parsing the string, probably using
+	strtok(), and looking up the words in a table.
+
+	create a main loop, the body of which calls read_command()
+	and then parse_command()  
+
+Here is a sample of what your program's output might look like:
+
+> take hammer
+action = 1
+obj[0] = 0
+> drop hammer
+action = 3
+obj[0] = 0
+> take hammer coin skull
+action = 1
+obj[0] = 0
+obj[1] = 1
+obj[2] = 2
+> look
+action = 5
+> acquire skull
+I don't understand the word 'acquire'
+action = -1
+> take pistol
+I don't understand the word 'pistol'
+action = -1
+> quit
+action = 6
+
+	
+Part 2:
+
+Create a table or list of locations (or rooms) in your game (pick
+just a few locations for starters.)  For each location, create a
+structure which contains:
+
+	a short name
+	a longer description
+	a "travel table" of destinations which indicate which
+	room you get to if you travel in each of the
+	following directions: n, ne, e, se, s, sw, w, nw, up, down
+
+	Reserve the first entry in your list of rooms to be the 
+	player's pocket.  No travel table entries should lead to this
+	"room" nor out of it.  For directions which do not lead anywher
+	out of a room, the travel table entry should use a special value
+	to indicate this (e.g. -1).
+
+	Add an integer variable to store the player's locations.
+
+	In your input loop, print the room name and description
+	for the player's current location.
+
+Sample output might resemble something like this:
+
+Field
+
+You are in a field.  A path leads away into the forest to the north
+and to the south.  A stream blocks travel to the east.  To the west is
+a small white house.
+
+
+> go north
+I don't understand the word 'north'
+action = -1
+Field
+
+You are in a field.  A path leads away into the forest to the north
+and to the south.  A stream blocks travel to the east.  To the west is
+a small white house.
+
+
+> 
+
+Part 3:
+
+	Create a table of structures for each object in the game
+	(again, start with just a few objects) which contains:
+
+	a short name for the object
+	a longer description of the object
+	the object's location (index or pointer into
+	the location table)
+	an indication of whether or not the object is portable
+
+	In part 1, you probably created an array or list of strings for
+	the nouns.  Replace the strings in that list or array with these
+	structures.  This will likely mean modifying your code which looks
+	up words.
+
+	Modify the code which prints the description of the players location
+	to also print out the descriptions of all objects which have the
+	same location as the player's location.
+
+	Sample output might resemble this:
+
+	Field
+
+	You are in a field.  A path leads away into the forest to the north
+	and to the south.  A stream blocks travel to the east.  To the west is
+	a small white house.
+
+
+	You see:
+	  a golden coin
+	> take coin
+	action = 1
+	obj[0] = 1
+	Field
+
+	You are in a field.  A path leads away into the forest to the north
+	and to the south.  A stream blocks travel to the east.  To the west is
+	a small white house.
+
+
+	You see:
+	  a golden coin
+
+Part 4.
+	To the table of verbs, add a function pointer to a function
+	which takes an array or list of object numbers.  For
+	each verb, add a function which processes the list of
+	objects in the appropriate way.  Hint:  Add the directions
+	(north, northeast, ...,up, down, etc.) as objects in the 
+	noun table, and add them first, so their indexes match
+	the indexes in the travel table for each location element. 
+
+	Hint: 
+
+	To implement "go" (e.g. "go north, south")
+
+	1. Check that the travel table entry for the player's 
+	   current the direction actually goes somewhere.
+	2. Set the player's location to whereever it goes.
+	   
+	To implement "take" (and "get") for each object,
+	1. check that it's portable
+	2. check that it's in the same location as the player.
+	3. change the object's location to that of the player's
+	   pocket.
+
+	To implement "drop"
+	1. check that the object's location is the player's pocket.
+	2. change the object's location to the player's location.
+
+Part 5:
+
+	Implement some other verbs
+
+	"inventory", "look", "examine"	
+
+	Make the game only print out the full description of the room
+	the first time the room is visited, otherwise only the short name.
+	Make it so that the full description can be seen by the player again
+	if the "look" command is entered.
+
+	allow travel by typing directions like "n" or "se" as a shortcut for
+	"go north" and "go southeast".
+
+	Sample output:
+
+	Field
+
+	You are in a field.  A path leads away into the forest to the north
+	and to the south.  A stream blocks travel to the east.  To the west is
+	a small white house.
+
+
+	You see:
+	  a golden coin
+	> take coin
+	a golden coin: Taken.
+	> examine coin
+	a golden coin: The coin appears to be a gold doubloon from the Spanish Main.
+	> n
+	North Forest
+
+	You are in a Forest.  A path leads away to the east and curves to the south.
+
+	You see:
+	  Nothing special.
+	> e
+	South Forest
+
+	You are in a forest.  A path leads off to the north and to the west.
+	You are likely to be eaten by a Forest Monster.
+
+
+	You see:
+	  a small crystal skull
+	  A huge, fire-breathing dragon
+	> take skull
+	a small crystal skull: Taken.
+	> take dragon
+	A huge, fire-breathing dragon: You can't take that.
+	> examine skull
+	a small crystal skull: You see nothing special about it.
+
+	> examine dragon
+	A huge, fire-breathing dragon: The dragon does not wish to be examined.
+	> n
+	Field
+	> w
+	Porch
+
+	You are on the porch on the east side of a a small white house overlooking
+	a field.
+
+	You see:
+	  A small rock hammer
+	> take hammer
+	A small rock hammer: Taken.
+	> examine hammer
+	A small rock hammer: You see nothing special about it.
+
+	> inventory
+	You are carrying:
+	  A small rock hammer
+	  a golden coin
+	  a small crystal skull
+	> drop skull coin hammer
+	a small crystal skull: Dropped.
+	a golden coin: Dropped.
+	A small rock hammer: Dropped.
+	> look
+	Porch
+
+	You are on the porch on the east side of a a small white house overlooking
+	a field.
+
+	You see:
+	  A small rock hammer
+	  a golden coin
+	  a small crystal skull
+	> quit
+
+Part 6: Other ideas...
+	
+	Add some puzzles to your game.
+
+	Add container objects so that some objects may be put inside
+	other objects (hint, you can encode this in the object's location.)
+
+	Add surface objects so that some objects may be "on" other objects.
+	(similar to containers)
+
+	Expand the parser so it can handle more complicated sentences, like:
+
+	"take the hammer and ring the bell",
+	"put the hot-pocket in the microwave",
+	"take off the jacket",
+	"put on the jacket",
+	etc.
+
+
+	
