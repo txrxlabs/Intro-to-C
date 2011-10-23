@@ -1,5 +1,6 @@
 all:	0018-hexadecimal-conversion 0003a-exercise \
 	0007-exercise-for-loop \
+	0007-exercise-alternate-recursive-soln \
 	0008-fizz-buzz \
 	0012-exercise-functions \
 	0014-perspective-projection \
@@ -17,6 +18,8 @@ all:	0018-hexadecimal-conversion 0003a-exercise \
 0007-exercise-for-loop:	0007-exercise-for-loop.c
 	cc -g -W -Wall -o 0007-exercise-for-loop 0007-exercise-for-loop.c
 
+0007-exercise-alternate-recursive-soln:	0007-exercise-alternate-recursive-soln.c
+	cc -g -W -Wall -o 0007-exercise-alternate-recursive-soln 0007-exercise-alternate-recursive-soln.c
 0008-fizz-buzz:	0008-fizz-buzz.c
 	cc -g -W -Wall -o 0008-fizz-buzz 0008-fizz-buzz.c
 
