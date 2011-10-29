@@ -25,7 +25,9 @@ PRODUCTS=0001-hello 0002-integer-variables \
 	0021-input-output \
 	0022-more-input-output \
 	0023-input-output-3 \
-	0024-strings3
+	0024-strings3 \
+	0025-module.o \
+	0025-module-client
 
 all:	${PRODUCTS}
 
