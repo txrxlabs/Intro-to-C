@@ -1,5 +1,15 @@
 #include <stdio.h>
 
+/* This program contains a *lot* of new concepts:
+ *
+ * 1.  Structures containing pointers to structures.
+ * 2.  Linked lists
+ * 3.  typedefs
+ * 4.  function pointers
+ * 5.  Recursion
+ *
+ */
+
 struct list_entry {
 	void *some_data;  /* void pointer, you can make this point to any type */
 	struct list_entry *next;
