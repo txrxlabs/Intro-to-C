@@ -26,10 +26,13 @@ PRODUCTS=0001-hello 0002-integer-variables \
 	0022-more-input-output \
 	0023-input-output-3 \
 	0024-strings3 \
-	0025-module.o \
-	0025-module-client
+	0025-display-module.o \
+	0025-display-module-client
 
 all:	${PRODUCTS}
 
+0025-display-module-client: 0025-display-module-client.c 0025-display-module.o
+	gcc ${CFLAGS} -o 0025-display-module-client 0025-display-module.o 0025-display-module-client.c
+
 clean:
-	rm -f ${PRODUCTS}	
+	rm -f ${PRODUCTS}
