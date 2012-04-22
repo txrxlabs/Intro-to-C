@@ -56,6 +56,11 @@ int main()
 	printf("value of (a = 6): %d\n", a = 6);
 	printf("The value of a is %d\n", a);
 
+	/* Some people habitually use so-called "Yoda expressions"
+	 * to avoid such problems.
+	 */
+	printf("As Yoda might put it: the value of (6 == a) is %d\n", (6 == a));
+
 	return 0;
 }
 
