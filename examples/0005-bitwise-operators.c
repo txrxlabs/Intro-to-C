@@ -19,6 +19,6 @@ int main()
 	/* right shift operator */
 	printf("0x%08x >> 3 == 0x%08x\n", a, a >> 3);
 	/* left shift operator */
-	printf("0x%08x << 3 == 0x%08x\n", b, b >> 3);
+	printf("0x%08x << 3 == 0x%08x\n", b, b << 3);
 	return 0;
 }
