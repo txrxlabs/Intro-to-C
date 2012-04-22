@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+/* related: ../exercises/0012-exercise-functions */
 /* variables, local variables, parameters... */
 
 /* you can declare variables outside the scope of any function.

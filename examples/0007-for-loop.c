@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+/* related: ../exercises/0007-exercise-for-loop.txt */
+
 int main()
 {
 	int i, j;

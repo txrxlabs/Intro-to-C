@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+/* related: ../exercises/0008-fizz-buzz.txt */
+
 int main()
 {
 

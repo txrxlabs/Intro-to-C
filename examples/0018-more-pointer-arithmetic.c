@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+/* related: ../exercises/0018-hexadecimal-conversion */
+
 int main(int argc, char *argv[])
 {
 	int a[] = { 10, 20, 30, 40, 50, 60, 70, 80, 90, -1 };

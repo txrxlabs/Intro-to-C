@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+/* related: ../exercises/0003a-exercise.txt */
+
 int main()
 {
 	double radius;
