@@ -47,6 +47,11 @@ int main()
 	 * +a      Unary plus
 	 */
 
+
+	/* Parentheses can be used to control order of evaluation of operators */
+	printf("(a + b) * (c + 10) = %d\n", (a + b) * (c + 10));
+	printf("a + b * c + 10 = %d\n", a + b * c + 10);
+
 	return 0;
 }
 
