@@ -13,7 +13,7 @@
  * occupies the same memory.  The idea is, you normally only
  * use _one_ of the members at a time.
  *
- * /
+ */
 
 struct regular_enemy_data {
 	int bullets_left;
