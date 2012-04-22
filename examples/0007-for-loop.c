@@ -6,9 +6,8 @@ int main()
 
 	/* The "for loop" has the following form:
          *
-         * for (initializer; test; increment) {
-         * 	body;
-         * }
+         * for (initializer; test; increment)
+         * 	body
          *
          * The are 4 parts, the initializer, the test,
          * the increment, and the body.  
@@ -24,13 +23,17 @@ int main()
          *
          * 1. executes the initializer.
          * 2. tests the condition (if any)
-         * 3. If the condition is not false (or empty)
+         * 3. If the condition is true (or empty)
          *    then
          * 4.       execute the body;
          * 5.       execute the increment
          * 6.       goto step 2.
          * 5. otherwise
          *         the loop is finished.
+	 *
+	 * The "body" may be an empty statement (just a semicolon),
+	 * a single statement followed by a semicolon, or a group of
+	 * statements enclosed in curly braces.
          *
          */
 
