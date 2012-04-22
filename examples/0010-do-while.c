@@ -13,9 +13,9 @@ int main()
 	 * Very similar to the while loop.
 	 *
 	 * The body is executed while the expression is
-	 * true.  This is the mainn diffence between the do-while
-	 * and the while loop.  Notice the body is always executed
-	 * at least once in the do-while loop.
+	 * true.  Notice the body is always executed at least
+	 * once in the do-while loop.  This is the mainn difference
+	 * between the do-while and the while loop.
 	 */
 
 	i = 0;
