@@ -27,7 +27,8 @@ PRODUCTS=0001-hello 0002-integer-variables \
 	0023-input-output-3 \
 	0024-strings3 \
 	0025-display-module.o \
-	0025-display-module-client
+	0025-display-module-client \
+	change-line-endings
 
 all:	${PRODUCTS}
 

@@ -1,0 +1,29 @@
+#!/bin/sh
+
+DOSDIR=txrxlabs-intro-to-c-dos-format
+
+rm -fr ${DOSDIR} || exit 1
+mkdir ${DOSDIR} || exit 1
+mkdir ${DOSDIR}/solutions || exit 1
+mkdir ${DOSDIR}/examples || exit 1
+mkdir ${DOSDIR}/exercises || exit 1
+
+cd examples || exit 1
+make clean || exit 1
+make change-line-endings || exit 1
+mv change-line-endings .. || exit 1
+cd .. || exit 1
+cd solutions || exit 1
+make clean || exit 1
+cd .. || exit 1
+
+for x in README list-of-concepts examples/* solutions/* exercises/*
+do
+	./change-line-endings < $x > ${DOSDIR}/$x || exit 1
+done
+
+zip -r intro-to-c . -i ${DOSDIR}/* ${DOSDIR}/*/* || exit 1
+rm -fr ${DOSDIR} || exit 1
+mv intro-to-c.zip txrxlabs-intro-to-c-dos-format.zip
+
+
