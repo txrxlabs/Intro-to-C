@@ -20,6 +20,7 @@ PRODUCTS=0001-hello 0002-integer-variables \
 	0017-arrays-pointer-arithmetic \
 	0018-more-pointer-arithmetic \
 	0019-structs \
+	0019b-malloc \
 	0020-more-structs \
 	0020b-malloc-and-free \
 	0021-input-output \
