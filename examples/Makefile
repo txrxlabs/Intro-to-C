@@ -28,6 +28,7 @@ PRODUCTS=0001-hello 0002-integer-variables \
 	0019g-linked-list \
 	0019h-linked-list \
 	0019i-linked-list \
+	0019j-function-pointers \
 	0020-more-structs \
 	0020b-malloc-and-free \
 	0021-input-output \
