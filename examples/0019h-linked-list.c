@@ -13,7 +13,8 @@ struct list_node {
 	 */
 };
 
-struct list_node *new_item(char *name, char *nickname)
+/* Create a new list node and initialize it */
+static struct list_node *new_item(char *name, char *nickname)
 {
 	struct list_node *item;
 
@@ -32,7 +33,7 @@ struct list_node *new_item(char *name, char *nickname)
 	return item;
 }
 
-void add_item_to_front_of_list(struct list_node **list, char *name, char *nickname)
+static void add_item_to_front_of_list(struct list_node **list, char *name, char *nickname)
 {
 	struct list_node *item;
 
@@ -44,7 +45,7 @@ void add_item_to_front_of_list(struct list_node **list, char *name, char *nickna
 	*list = item;
 }
 
-void append_to_list(struct list_node **list, char *name, char *nickname)
+static void append_to_list(struct list_node **list, char *name, char *nickname)
 {
 	struct list_node *i, *item;
 
@@ -63,12 +64,12 @@ void append_to_list(struct list_node **list, char *name, char *nickname)
 	i->next = item;
 }
 
-void print_list_node(struct list_node *node)
+static void print_list_node(struct list_node *node)
 {
 	printf("%s : %s\n", node->name, node->nickname);
 }
 
-void print_list(struct list_node *list)
+static void print_list(struct list_node *list)
 {
 	struct list_node *i;
 
@@ -76,7 +77,8 @@ void print_list(struct list_node *list)
 		print_list_node(i);
 }
 
-void delete_node(struct list_node **list, struct list_node *node_to_delete,
+/* Delete a node from a  list */
+static void delete_node(struct list_node **list, struct list_node *node_to_delete,
 			struct list_node *prev)
 {
 	if (prev == NULL) {
@@ -88,7 +90,8 @@ void delete_node(struct list_node **list, struct list_node *node_to_delete,
 	free(node_to_delete);
 }
 
-void delete_item_from_list_by_nickname(struct list_node **list, char *nickname)
+/* find a node with the specified nick name and delete it from a list */
+static void delete_item_from_list_by_nickname(struct list_node **list, char *nickname)
 {
 	struct list_node *prev, *curr;
 

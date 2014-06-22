@@ -13,7 +13,7 @@ struct list_node {
 	 */
 };
 
-void add_item_to_front_of_list(struct list_node **list, char *name, char *nickname)
+static void add_item_to_front_of_list(struct list_node **list, char *name, char *nickname)
 {
 	struct list_node *item;
 
@@ -35,7 +35,7 @@ void add_item_to_front_of_list(struct list_node **list, char *name, char *nickna
 	*list = item;
 }
 
-void append_to_list(struct list_node **list, char *name, char *nickname)
+static void append_to_list(struct list_node **list, char *name, char *nickname)
 {
 	struct list_node *i, *item;
 
@@ -67,12 +67,12 @@ void append_to_list(struct list_node **list, char *name, char *nickname)
 	i->next = item;
 }
 
-void print_list_node(struct list_node *node)
+static void print_list_node(struct list_node *node)
 {
 	printf("%s : %s\n", node->name, node->nickname);
 }
 
-void print_list(struct list_node *list)
+static void print_list(struct list_node *list)
 {
 	struct list_node *i;
 

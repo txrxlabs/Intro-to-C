@@ -13,7 +13,7 @@ struct list_node {
 	 */
 };
 
-void add_item_to_front_of_list(struct list_node **list, char *name, char *nickname)
+static void add_item_to_front_of_list(struct list_node **list, char *name, char *nickname)
 {
 	struct list_node *item;
 
